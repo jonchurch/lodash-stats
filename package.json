@@ -1,0 +1,22 @@
+{
+  "name": "lodash-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "lodash-stats": "./lodash-stats.mjs"
+  },
+  "scripts": {
+    "test": "echo \"no tests yet\"",
+    "stats": "node lodash-stats.mjs",
+    "stats:total": "node lodash-stats.mjs --total",
+    "stats:graph": "node lodash-stats.mjs --graph",
+    "stats:save": "node lodash-stats.mjs > LODASH_STATS.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "download-counts": "^2.20260301.0"
+  }
+}
