@@ -88,19 +88,19 @@ function cmdTotal(stats) {
 
   const lines = [
     `Lodash total downloads (all ${totalPackages} packages):`,
-    `  ${formatNum(daily)}/day`,
-    `  ${formatNum(weekly)}/week`,
     `  ${formatNum(grandTotal)}/month`,
+    `  ${formatNum(weekly)}/week`,
+    `  ${formatNum(daily)}/day`,
   ];
 
   if (args.silly) {
     const perSecond = Math.round(grandTotal / 30 / 24 / 60 / 60);
     const perMinute = Math.round(grandTotal / 30 / 24 / 60);
     const perHour = Math.round(grandTotal / 30 / 24);
-    lines.splice(1, 0,
-      `  ${formatNum(perSecond)}/second`,
-      `  ${formatNum(perMinute)}/minute`,
+    lines.push(
       `  ${formatNum(perHour)}/hour`,
+      `  ${formatNum(perMinute)}/minute`,
+      `  ${formatNum(perSecond)}/second`,
     );
   }
 

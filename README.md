@@ -30,9 +30,21 @@ Show grand total downloads across all lodash packages.
 ```bash
 lodash-stats total
 # Lodash total downloads (all 453 packages):
-#   126.7M/day
-#   887.2M/week
 #   3.8B/month
+#   887.2M/week
+#   126.7M/day
+```
+Pass `--silly` to see hour/minute/second breakdown as well.
+
+```bash
+lodash-stats total --silly
+# Lodash total downloads (all 453 packages):
+#  4.6B/month
+#  1.1B/week
+#  152.6M/day
+#  6.4M/hour
+#  106.0K/minute
+#  1.8K/second
 ```
 
 ### `graph`
