@@ -15,8 +15,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "download-counts": "^2.20260301.0"
-  }
+  "license": "ISC"
 }

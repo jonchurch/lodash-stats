@@ -131,6 +131,6 @@ npm run stats:graph    # bar chart
 npm run stats:save     # save markdown report
 ```
 
-## Data Source
+## Data Source & Methodology
 
-Download counts come from the [`download-counts`](https://github.com/nice-registry/download-counts) npm package, which bundles monthly npm download data. The CLI checks for newer versions on startup and warns if your data is outdated.
+Download counts are fetched live from the [npm registry downloads API](https://github.com/npm/registry/blob/main/docs/download-counts.md) (`/downloads/point/last-month`), which returns the total number of installs over a rolling 30-day window. Weekly, daily, and per-second figures are estimated by dividing the monthly total, they are not independently measured. Results are cached to the system's temp dir for 1 hour to avoid redundant API calls.
