@@ -5,7 +5,7 @@ A CLI for querying lodash ecosystem download stats across 450+ packages.
 ## Usage
 
 ```bash
-node lodash-stats.mjs <command> [options]
+lodash-stats <command> [options]
 ```
 
 ## Data Source & Methodology
@@ -19,8 +19,8 @@ Download counts are fetched live from the [npm registry downloads API](https://g
 Show the top N packages by download count. Defaults to 20. Includes core packages (`lodash`, `lodash-es`), method packages (`lodash.merge`, etc.), and legacy packages.
 
 ```bash
-node lodash-stats.mjs top        # top 20
-node lodash-stats.mjs top 5      # top 5
+lodash-stats top        # top 20
+lodash-stats top 5      # top 5
 ```
 
 ### `total`
@@ -28,7 +28,7 @@ node lodash-stats.mjs top 5      # top 5
 Show grand total downloads across all lodash packages.
 
 ```bash
-node lodash-stats.mjs total
+lodash-stats total
 # Lodash total downloads (all 453 packages):
 #   126.7M/day
 #   887.2M/week
@@ -40,7 +40,7 @@ node lodash-stats.mjs total
 Show a bar chart of download share across the ecosystem.
 
 ```bash
-node lodash-stats.mjs graph
+lodash-stats graph
 ```
 
 Outputs a simple bar chart in stdout:
@@ -70,7 +70,7 @@ Outputs a simple bar chart in stdout:
 Search packages by name.
 
 ```bash
-node lodash-stats.mjs search debounce
+lodash-stats search debounce
 ```
 
 ### `category [name]`
@@ -78,8 +78,8 @@ node lodash-stats.mjs search debounce
 List all categories, or show packages in a specific category.
 
 ```bash
-node lodash-stats.mjs category              # list categories
-node lodash-stats.mjs category Function      # packages in Function
+lodash-stats category              # list categories
+lodash-stats category Function      # packages in Function
 ```
 
 `cat` is an alias for `category`.
@@ -89,7 +89,7 @@ node lodash-stats.mjs category Function      # packages in Function
 Output a full report in markdown format. Useful for saving to a file.
 
 ```bash
-node lodash-stats.mjs markdown > LODASH_STATS.md
+lodash-stats markdown > LODASH_STATS.md
 ```
 
 `md` is an alias for `markdown`.
@@ -111,17 +111,17 @@ node lodash-stats.mjs markdown > LODASH_STATS.md
 
 ```bash
 # Top 5 packages overall
-node lodash-stats.mjs top 5
+lodash-stats top 5
 
 # Function category sorted by name
-node lodash-stats.mjs category Function --sort name
+lodash-stats category Function --sort name
 
 # Search with JSON output
-node lodash-stats.mjs search clone --json
+lodash-stats search clone --json
 
 # Monthly, weekly, daily, hourly, and per second stats
-node lodash-stats.mjs total --silly
+lodash-stats total --silly
 
 # Save markdown report
-node lodash-stats.mjs md > LODASH_STATS.md
+lodash-stats md > LODASH_STATS.md
 ```

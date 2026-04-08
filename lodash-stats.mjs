@@ -308,7 +308,14 @@ Options:
       --silly          Show per-second stats (with total)
       --total          Shorthand for total command
       --graph          Shorthand for graph command
-  -h, --help           Show this help`);
+  -h, --help           Show this help
+
+Examples:
+  lodash-stats top 5
+  lodash-stats total --silly
+  lodash-stats search debounce --json
+  lodash-stats category Function --sort name
+  lodash-stats md > LODASH_STATS.md`);
     return;
   }
 
