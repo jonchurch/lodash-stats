@@ -39,6 +39,28 @@ Show a bar chart of download share across the ecosystem.
 node lodash-stats.mjs graph
 ```
 
+Outputs a simple bar chart in stdout:
+
+```txt
+
+  Lodash Ecosystem Download Share
+  ════════════════════════════════════════════════════════
+
+  Other (446+ pkgs)      ████████████████████████████████████████ 2.4B (63.0%)
+  lodash                 ████████ 452.4M (11.9%)
+  lodash.merge           █████ 279.1M (7.3%)
+  lodash.isplainobject   ███ 163.7M (4.3%)
+  lodash.debounce        ██ 140.6M (3.7%)
+  lodash.once            ██ 134.3M (3.5%)
+  lodash.isstring        ██ 130.7M (3.4%)
+  lodash-es              ██ 106.9M (2.8%)
+
+  ────────────────────────────────────────────────────────
+  Total: 3.8B/month across 453 packages
+
+
+```
+
 ### `search <term>`
 
 Search packages by name.
