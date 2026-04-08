@@ -240,7 +240,7 @@ function cmdMarkdown(stats) {
   // By category
   p.push('## Downloads By Category');
   p.push('');
-  const categoryOrder = Object.keys(categories).filter(c => c !== 'Seq');
+  const categoryOrder = Object.keys(categories);
   for (const cat of categoryOrder) {
     const items = sortItems(stats.methods.filter(m => m.category === cat), 'count');
     if (items.length === 0) continue;

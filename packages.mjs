@@ -75,15 +75,10 @@ export const categories = {
   Util: [
     'attempt', 'bindAll', 'cond', 'conforms', 'constant', 'defaultTo', 'flow',
     'flowRight', 'identity', 'iteratee', 'matches', 'matchesProperty', 'method',
-    'methodOf', 'mixin', 'noConflict', 'noop', 'nthArg', 'over', 'overEvery',
-    'overSome', 'property', 'propertyOf', 'range', 'rangeRight', 'runInContext',
+    'methodOf', 'mixin', 'noop', 'nthArg', 'over', 'overEvery',
+    'overSome', 'property', 'propertyOf', 'range', 'rangeRight',
     'stubArray', 'stubFalse', 'stubObject', 'stubString', 'stubTrue', 'times',
     'toPath', 'uniqueId',
-  ],
-  Seq: [
-    'chain', 'tap', 'thru', 'wrapperAt', 'wrapperChain', 'wrapperCommit',
-    'wrapperNext', 'wrapperPlant', 'wrapperReverse', 'wrapperToIterator',
-    'wrapperValue',
   ],
 };
 
