@@ -1,6 +1,6 @@
 {
   "name": "lodash-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI for querying lodash ecosystem download stats across 450+ packages.",
   "bin": {
     "lodash-stats": "lodash-stats.mjs"
@@ -23,7 +23,9 @@
     "url": "git+https://github.com/jonchurch/lodash-stats.git"
   },
   "type": "module",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "bugs": {
     "url": "https://github.com/jonchurch/lodash-stats/issues"
   },
