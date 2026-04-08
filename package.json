@@ -1,7 +1,7 @@
 {
   "name": "lodash-stats",
   "version": "1.2.1",
-  "description": "A CLI for querying lodash ecosystem download stats across 450+ packages.",
+  "description": "A CLI for querying lodash ecosystem download stats across 440+ packages.",
   "bin": {
     "lodash-stats": "lodash-stats.mjs"
   },

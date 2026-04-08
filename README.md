@@ -1,6 +1,6 @@
 # lodash-stats CLI
 
-A CLI for querying lodash ecosystem download stats across 450+ packages.
+A CLI for querying lodash ecosystem download stats across 440+ packages.
 
 ## Usage
 
@@ -29,7 +29,7 @@ Show grand total downloads across all lodash packages.
 
 ```bash
 lodash-stats total
-# Lodash total downloads (all 453 packages):
+# Lodash total downloads (all 440 packages):
 #   4.6B/month
 #   1.1B/week
 #   152.6M/day
@@ -38,7 +38,7 @@ Pass `--silly` to see hour/minute/second breakdown as well.
 
 ```bash
 lodash-stats total --silly
-# Lodash total downloads (all 453 packages):
+# Lodash total downloads (all 440 packages):
 #  4.6B/month
 #  1.1B/week
 #  152.6M/day
@@ -72,7 +72,7 @@ Outputs a simple bar chart in stdout:
   lodash-es              ██ 124.3M (2.7%)
 
   ────────────────────────────────────────────────────────
-  Total: 4.6B/month across 453 packages
+  Total: 4.6B/month across 440 packages
 
 
 ```
