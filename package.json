@@ -1,19 +1,31 @@
 {
   "name": "lodash-stats",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A CLI for querying lodash ecosystem download stats across 450+ packages.",
   "bin": {
-    "lodash-stats": "./lodash-stats.mjs"
+    "lodash-stats": "lodash-stats.mjs"
   },
+  "files": [
+    "lodash-stats.mjs",
+    "packages.mjs",
+    "fetch-downloads.mjs"
+  ],
   "scripts": {
     "test": "echo \"no tests yet\"",
-    "stats": "node lodash-stats.mjs",
-    "stats:total": "node lodash-stats.mjs --total",
-    "stats:graph": "node lodash-stats.mjs --graph",
-    "stats:save": "node lodash-stats.mjs > LODASH_STATS.md"
+    "stats:save": "node lodash-stats.mjs md > LODASH_STATS.md"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "jonchurch",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonchurch/lodash-stats.git"
+  },
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "bugs": {
+    "url": "https://github.com/jonchurch/lodash-stats/issues"
+  },
+  "homepage": "https://github.com/jonchurch/lodash-stats#readme"
 }
