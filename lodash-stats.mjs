@@ -10,16 +10,15 @@ import {
 
 const { values: args, positionals } = parseArgs({
   options: {
-    top:      { type: 'string', short: 't', default: '20' },
+    top: { type: 'string', short: 't', default: '20' },
     category: { type: 'string', short: 'c' },
-    search:   { type: 'string', short: 's' },
-    graph:    { type: 'boolean', default: false },
-    total:    { type: 'boolean', default: false },
-    silly:    { type: 'boolean', default: false },
-    sort:     { type: 'string', default: 'count' }, // count | name
-    json:     { type: 'boolean', default: false },
-    help:     { type: 'boolean', short: 'h', default: false },
-
+    search: { type: 'string', short: 's' },
+    graph: { type: 'boolean', default: false },
+    total: { type: 'boolean', default: false },
+    silly: { type: 'boolean', default: false },
+    sort: { type: 'string', default: 'count' }, // count | name
+    json: { type: 'boolean', default: false },
+    help: { type: 'boolean', short: 'h', default: false },
   },
   allowPositionals: true,
   strict: false,
@@ -143,7 +142,7 @@ function cmdTop(stats, overrides = {}) {
 
   const label = categoryFilter ? `Top ${items.length} in ${categoryFilter}` :
     searchFilter ? `Results for "${searchFilter}"` :
-    `Top ${items.length} lodash packages`;
+      `Top ${items.length} lodash packages`;
 
   const lines = [label, ''];
   items.forEach((s, i) => {
@@ -313,7 +312,12 @@ Options:
     return;
   }
 
-  downloadCounts = await fetchDownloads(allPackageNames);
+  try {
+    downloadCounts = await fetchDownloads(allPackageNames);
+  } catch (err) {
+    console.error(`Failed to fetch download stats: ${err.message}`);
+    process.exit(1);
+  }
 
   const stats = buildStats();
 
