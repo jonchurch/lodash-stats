@@ -30,9 +30,9 @@ Show grand total downloads across all lodash packages.
 ```bash
 lodash-stats total
 # Lodash total downloads (all 453 packages):
-#   3.8B/month
-#   887.2M/week
-#   126.7M/day
+#   4.6B/month
+#   1.1B/week
+#   152.6M/day
 ```
 Pass `--silly` to see hour/minute/second breakdown as well.
 
@@ -62,17 +62,17 @@ Outputs a simple bar chart in stdout:
   Lodash Ecosystem Download Share
   ════════════════════════════════════════════════════════
 
-  Other (446+ pkgs)      ████████████████████████████████████████ 2.4B (63.0%)
-  lodash                 ████████ 452.4M (11.9%)
-  lodash.merge           █████ 279.1M (7.3%)
-  lodash.isplainobject   ███ 163.7M (4.3%)
-  lodash.debounce        ██ 140.6M (3.7%)
-  lodash.once            ██ 134.3M (3.5%)
-  lodash.isstring        ██ 130.7M (3.4%)
-  lodash-es              ██ 106.9M (2.8%)
+  Other (446+ pkgs)      ████████████████████████████████████████ 2.9B (62.5%)
+  lodash                 ████████ 555.7M (12.1%)
+  lodash.merge           █████ 346.2M (7.6%)
+  lodash.isplainobject   ███ 215.3M (4.7%)
+  lodash.debounce        ██ 163.9M (3.6%)
+  lodash.once            ██ 158.4M (3.5%)
+  lodash.isstring        ██ 154.6M (3.4%)
+  lodash-es              ██ 124.3M (2.7%)
 
   ────────────────────────────────────────────────────────
-  Total: 3.8B/month across 453 packages
+  Total: 4.6B/month across 453 packages
 
 
 ```
@@ -113,11 +113,9 @@ lodash-stats markdown > LODASH_STATS.md
 | `--sort <count\|name>` | | Sort by download count (default) or name |
 | `--category <name>` | `-c` | Filter to a specific category |
 | `--search <term>` | `-s` | Filter packages by name |
-| `--top <N>` | `-t` | Limit number of results |
 | `--json` | | Output as JSON |
-| `--total` | | Shorthand for `total` command |
-| `--graph` | | Shorthand for `graph` command |
 | `--silly` | | Show downloads down to per-second (use with `total`) |
+| `--no-cache` | | Skip cache, fetch fresh data from npm |
 
 ## Examples
 

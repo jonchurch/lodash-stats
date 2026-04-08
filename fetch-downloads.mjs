@@ -34,10 +34,12 @@ async function fetchBatch(packages) {
  * Returns a Map of package name -> monthly download count.
  * Results are cached to /tmp for 1 hour.
  */
-export async function fetchDownloads(packageNames) {
-  const cached = readCache();
-  if (cached) {
-    return new Map(Object.entries(cached));
+export async function fetchDownloads(packageNames, { noCache = false } = {}) {
+  if (!noCache) {
+    const cached = readCache();
+    if (cached) {
+      return new Map(Object.entries(cached));
+    }
   }
 
   // Split into batches of 128

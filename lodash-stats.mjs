@@ -10,15 +10,13 @@ import {
 
 const { values: args, positionals } = parseArgs({
   options: {
-    top: { type: 'string', short: 't', default: '20' },
     category: { type: 'string', short: 'c' },
     search: { type: 'string', short: 's' },
-    graph: { type: 'boolean', default: false },
-    total: { type: 'boolean', default: false },
     silly: { type: 'boolean', default: false },
     sort: { type: 'string', default: 'count' }, // count | name
     json: { type: 'boolean', default: false },
     help: { type: 'boolean', short: 'h', default: false },
+    'no-cache': { type: 'boolean', default: false },
   },
   allowPositionals: true,
   strict: false,
@@ -108,7 +106,7 @@ function cmdTotal(stats) {
 }
 
 function cmdTop(stats, overrides = {}) {
-  const n = parseInt(positionals[1] || args.top, 10) || 20;
+  const n = parseInt(positionals[1], 10) || 20;
   const categoryFilter = overrides.category || args.category;
   const searchFilter = overrides.search || args.search;
 
@@ -294,20 +292,20 @@ Commands:
   total                Grand total across all packages
   graph                Bar chart of download share
   search <term>        Search packages by name
-  category [name]      List categories, or filter to one (alias: cat)
+  category [name]      Filter to a category (alias: cat)
+                       Valid: Array, Collection, Date, Function, Lang,
+                       Math, Number, Object, String, Util
   list                 List all package names (alias: ls)
   markdown             Full report in markdown (alias: md)
   help                 Show this help
 
 Options:
-  -t, --top <N>        Limit number of results
   -c, --category <name> Filter by category
   -s, --search <term>  Filter by name
       --sort <field>   Sort by: count (default), name
       --json           Output as JSON
       --silly          Show per-second stats (with total)
-      --total          Shorthand for total command
-      --graph          Shorthand for graph command
+      --no-cache       Skip cache, fetch fresh data from npm
   -h, --help           Show this help
 
 Examples:
@@ -320,7 +318,7 @@ Examples:
   }
 
   try {
-    downloadCounts = await fetchDownloads(allPackageNames);
+    downloadCounts = await fetchDownloads(allPackageNames, { noCache: args['no-cache'] });
   } catch (err) {
     console.error(`Failed to fetch download stats: ${err.message}`);
     process.exit(1);
@@ -340,10 +338,6 @@ Examples:
     markdown: cmdMarkdown,
     md: cmdMarkdown,
   };
-
-  // Flags as shorthand for commands
-  if (args.total) return console.log(cmdTotal(stats));
-  if (args.graph) return console.log(cmdGraph(stats));
 
   const handler = commands[command];
   if (!handler) {
