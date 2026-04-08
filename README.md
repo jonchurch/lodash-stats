@@ -8,6 +8,10 @@ A CLI for querying lodash ecosystem download stats across 450+ packages.
 node lodash-stats.mjs <command> [options]
 ```
 
+## Data Source & Methodology
+
+Download counts are fetched live from the [npm registry downloads API](https://github.com/npm/registry/blob/main/docs/download-counts.md) (`/downloads/point/last-month`), which returns the total number of installs over a rolling 30-day window. Weekly, daily, and per-second figures are estimated by dividing the monthly total, they are not independently measured. Results are cached to the system's temp dir for 1 hour to avoid redundant API calls.
+
 ## Commands
 
 ### `top [N]`
@@ -115,22 +119,9 @@ node lodash-stats.mjs category Function --sort name
 # Search with JSON output
 node lodash-stats.mjs search clone --json
 
-# Per-second stats
+# Monthly, weekly, daily, hourly, and per second stats
 node lodash-stats.mjs total --silly
 
 # Save markdown report
 node lodash-stats.mjs md > LODASH_STATS.md
 ```
-
-## npm scripts
-
-```bash
-npm run stats          # default (top 20)
-npm run stats:total    # total downloads
-npm run stats:graph    # bar chart
-npm run stats:save     # save markdown report
-```
-
-## Data Source & Methodology
-
-Download counts are fetched live from the [npm registry downloads API](https://github.com/npm/registry/blob/main/docs/download-counts.md) (`/downloads/point/last-month`), which returns the total number of installs over a rolling 30-day window. Weekly, daily, and per-second figures are estimated by dividing the monthly total, they are not independently measured. Results are cached to the system's temp dir for 1 hour to avoid redundant API calls.
